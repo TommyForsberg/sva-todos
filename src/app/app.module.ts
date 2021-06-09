@@ -6,15 +6,17 @@ import { AppComponent } from './app.component';
 import { TodoOverviewComponent } from './features/todos/components/todo-overview/todo-overview.component';
 import { TodoListComponent } from './features/todos/components/todo-list/todo-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

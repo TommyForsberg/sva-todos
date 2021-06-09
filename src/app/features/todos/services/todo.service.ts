@@ -7,11 +7,9 @@ import { Observable } from 'rxjs';
 })
 export class TodoService {
 
-  private readonly baseUrl = 'https://jsonplaceholder.typicode.com/users';
-
   constructor(private http: HttpClient) { }
 
-  getTodos(personId: number): Observable<Todo[]>{
-    return this.http.get<Todo[]>(this.baseUrl);
+  getTodos(userId: number): Observable<Todo[]>{
+    return this.http.get<Todo[]>(`users/${userId}/todos`);
   }
 }

@@ -1,2 +1,20 @@
-<p>todo-overview works!</p>
+<div class="container">
+    <div class="row pt-5 py-5">
+        <div class="col-sm-3 pt-4 py-4">
+            <div class="form-group">
+                <label for="user-select">Användare</label>
+                <select class="form-control" id="user-select" (change)="selectedUserId.next($any($event.target).value)">
+                    <option selected>Välj användare</option>
+                    <option *ngFor="let user of users | async" [value]="user.id">{{user.name}}</option>
+                </select>
+              </div>
+        </div>
+        <div class="col-sm-9">
+            <h1>To do's</h1>
+            <app-todo-list [todos]="userTodos | async"></app-todo-list>
+        </div>
+    </div>
+</div>
+
+
 

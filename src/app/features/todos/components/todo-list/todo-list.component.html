@@ -1,1 +1,14 @@
-<p>todo-list works!</p>
+<table class="table table-striped">
+    <thead>
+      <tr style="background-color: #686868; color: white;">
+        <th scope="col">Slutförd</th>
+        <th scope="col">Testa mera</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let todo of todos">
+        <td><input type="checkbox" [checked]="todo.completed"  /></td>
+        <td>{{todo.title}}</td>
+      </tr>
+    </tbody>
+  </table>

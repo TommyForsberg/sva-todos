@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TodoOverviewComponent } from './components/todo-overview/todo-overview.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
@@ -16,7 +17,9 @@ export const routing = RouterModule.forChild(routes);
   ],
   imports: [
     routing,
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   entryComponents:[
       TodoOverviewComponent
