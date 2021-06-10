@@ -1,1 +1,16 @@
-<p>app-header works!</p>
+<header>
+    <div class="p-3 mb-3 background-primary border-bottom box-shadow">
+        <div class="row">
+            <div class="col-lg-3">
+                <h5 class="my-0 font-weight-normal">SVA</h5>
+            </div>
+            <div class="col-lg-9">
+                <nav class="my-2 my-md-0 mr-md-3">
+                    <a class="nav-item" [routerLink]="['/']" [routerLinkActive]="['active']"
+                        [routerLinkActiveOptions]="{ exact: true }">Start</a>
+                    <a class="nav-item" [routerLink]="['/todos']" [routerLinkActive]="['active']">Arbetsuppgifter</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>

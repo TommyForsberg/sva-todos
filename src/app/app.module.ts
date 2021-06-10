@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TodoOverviewComponent } from './features/todos/components/todo-overview/todo-overview.component';
-import { TodoListComponent } from './features/todos/components/todo-list/todo-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './core/core.module';
+import { StartComponent } from './features/start/start.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    StartComponent,
   ],
   imports: [
     BrowserModule,

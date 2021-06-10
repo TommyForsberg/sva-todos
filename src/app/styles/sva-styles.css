@@ -1,15 +1,47 @@
 .background-primary{
- background-color: #eb997e;   
+ background-color: #fdf7f5;   
 }
-
+.text-muted {
+    color:  #f6c4b1!important;
+}
 h1 {
     font-family: 'Lato', sans-serif;
     color: #d22630;
     font-size: 44px;
     line-height: 50px;
-    
-    ;
+}
+h2 {
+    font-family: 'Lato', sans-serif;
+    color: #d22630;
+    font-size: 30x;
+    line-height: 36px;
+}
+h5 {
+    font-family: 'Lato', sans-serif;
+    color: #d22630;
+    font-size: 20x;
+}
+h6 {
+    font-family: 'Lato', sans-serif;
+    color: #d22630;
+    font-size: 18px;
 }
 table {
     font-family: 'Lato', sans-serif;
+}
+a.nav-item {
+    padding: 19px 30px;
+    justify-content: center;
+    cursor: pointer;
+    color: #d22630;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+
+}
+a:hover {background-color: #f6c4b1;
+
+}
+.active{
+    background-color: #f6c4b1;
 }

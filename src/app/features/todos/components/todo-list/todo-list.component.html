@@ -2,12 +2,16 @@
     <thead>
       <tr style="background-color: #686868; color: white;">
         <th scope="col">Slutförd</th>
-        <th scope="col">Testa mera</th>
+        <th scope="col">Titel</th>
       </tr>
     </thead>
     <tbody>
         <tr *ngFor="let todo of todos">
-        <td><input type="checkbox" [checked]="todo.completed"  /></td>
+        <td>
+          <div class="form-group form-check">
+            <input type="checkbox" [checked]="todo.completed" class="form-check-input">      
+          </div>
+</td>
         <td>{{todo.title}}</td>
       </tr>
     </tbody>

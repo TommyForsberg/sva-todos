@@ -4,6 +4,7 @@ import { AppHeaderComponent } from './components/app-header/app-header.component
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ApiInterceptor } from './interceptors/api-interceptor';
 import { environment } from 'src/environments/environment';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -11,10 +12,11 @@ import { environment } from 'src/environments/environment';
   declarations: [AppHeaderComponent],
   exports: [AppHeaderComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    AppRoutingModule
   ],
   providers: [
- 
+
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ApiInterceptor,

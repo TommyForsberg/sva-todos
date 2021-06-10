@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject, Observable, ReplaySubject } from 'rxjs';
-import { mergeMap } from 'rxjs/operators';
+import { merge,  Observable, ReplaySubject } from 'rxjs';
+import { mapTo, mergeMap, } from 'rxjs/operators';
 import { Todo } from '../../models/todo';
 import { User } from '../../models/user';
 import { TodoService } from '../../services/todo.service';
@@ -17,17 +17,13 @@ export class TodoOverviewComponent implements OnInit {
   users: Observable<User[]> = this.userService.getUsers();
   selectedUserId: ReplaySubject<number> = new ReplaySubject<number>();
   userTodos: Observable<Todo[]> = this.selectedUserId.pipe(mergeMap(id => this.todoService.getTodos(id)));
-
-
+  spin: Observable<boolean> = merge(...[this.selectedUserId.pipe(
+  mapTo(true)),
+  this.userTodos.pipe(mapTo(false))]);
 
   ngOnInit(): void {
-    this.todoService.getTodos(1).subscribe(r => console.log(r));
+
   }
- selectUser(data:any):void{
-   console.log(data);
- //console.log(this.selectedUser.value.id);
- //this.userTodos = this.todoService.getTodos(this.selectedUser.value.id);
-}
 }
 
 

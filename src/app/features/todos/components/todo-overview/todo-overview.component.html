@@ -1,8 +1,10 @@
 <div class="container">
     <div class="row pt-5 py-5">
-        <div class="col-sm-3 pt-4 py-4">
+        <div class="col-sm-3 pt-3 py-4 pr-4">
             <div class="form-group">
-                <label for="user-select">Användare</label>
+                <label for="user-select">
+                   <h5>Användare</h5> 
+                </label>
                 <select class="form-control" id="user-select" (change)="selectedUserId.next($any($event.target).value)">
                     <option selected>Välj användare</option>
                     <option *ngFor="let user of users | async" [value]="user.id">{{user.name}}</option>
@@ -10,8 +12,13 @@
               </div>
         </div>
         <div class="col-sm-9">
-            <h1>To do's</h1>
+            <h2>To do's</h2>
             <app-todo-list [todos]="userTodos | async"></app-todo-list>
+            <div class="row">
+                <div class="offset-lg-5">
+                 <app-spinner [spin] = "spin | async"></app-spinner>
+                </div>
+              </div>
         </div>
     </div>
 </div>
