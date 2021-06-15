@@ -16,7 +16,7 @@
             <app-todo-list [todos]="userTodos | async"></app-todo-list>
             <div class="row">
                 <div class="offset-lg-5">
-                 <app-spinner [spin] = "spin | async"></app-spinner>
+                 <app-spinner [spin] = "loading | async"></app-spinner>
                 </div>
               </div>
         </div>
