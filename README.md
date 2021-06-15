@@ -1,4 +1,6 @@
-
+# För att köra applikationen
+1. npm install
+2. npm start eller ng serve
 # sva-todos
 Application for fetching and listing users and their todos
 
