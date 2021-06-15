@@ -3,25 +3,22 @@
         <div class="col-sm-3 pt-3 py-4 pr-4">
             <div class="form-group">
                 <label for="user-select">
-                   <h5>Användare</h5> 
+                    <h5>Användare</h5>
                 </label>
                 <select class="form-control" id="user-select" (change)="selectedUserId.next($any($event.target).value)">
                     <option selected>Välj användare</option>
                     <option *ngFor="let user of users | async" [value]="user.id">{{user.name}}</option>
                 </select>
-              </div>
+            </div>
         </div>
         <div class="col-sm-9">
             <h2>To do's</h2>
             <app-todo-list [todos]="userTodos | async"></app-todo-list>
             <div class="row">
                 <div class="offset-lg-5">
-                 <app-spinner [spin] = "loading | async"></app-spinner>
+                    <app-spinner [spin]="loading | async"></app-spinner>
                 </div>
-              </div>
+            </div>
         </div>
     </div>
 </div>
-
-
-
