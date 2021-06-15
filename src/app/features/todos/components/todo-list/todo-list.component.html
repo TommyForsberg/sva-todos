@@ -1,22 +1,22 @@
 <table class="table table-striped">
-  <thead>
-    <tr style="background-color: #686868; color: white;">
-      <th scope="col">Slutförd</th>
-      <th scope="col">Titel</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let todo of todos | slice: (page-1) * pageSize : page * pageSize; index as i">
-      <td>
-        <div class="form-group form-check">
-          <input type="checkbox" [checked]="todo.completed" class="form-check-input">
-        </div>
-      </td>
-      <td>{{todo.title}}</td>
-    </tr>
-  </tbody>
-</table>
-<ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [maxSize]="5" [boundaryLinks]="true"
+    <thead>
+      <tr [ngStyle]="{'background-color': '#686868', 'color': 'white'}">
+        <th scope="col">Slutförd</th>
+        <th scope="col">Titel</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let todo of todos | slice: (page-1) * pageSize : page * pageSize; index as i" >
+          <td>
+          <div class="form-group form-check">
+            <input type="checkbox" [checked]="todo.completed" class="form-check-input">      
+          </div>
+</td>
+        <td>{{todo.title}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [maxSize]="5" [boundaryLinks]="true"
   [pageSize]="pageSize" class="d-flex justify-content-center">
   <ng-template ngbPaginationNumber let-page>{{page}}</ng-template>
 </ngb-pagination>
