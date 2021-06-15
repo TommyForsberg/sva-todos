@@ -39,9 +39,21 @@ a.nav-item {
     font-weight: 700;
 
 }
-a:hover {background-color: #f6c4b1;
-
-}
-.active{
+a:hover {
     background-color: #f6c4b1;
 }
+
+.active {
+    background-color: #f6c4b1;
+}
+
+.page-item.active .page-link {
+    background-color:   #66b7e2;
+    border-color:   #7bc1e6;}
+    
+.page-link {
+        color:  #66b7e2;}
+
+.page-item.disabled{
+color: #767676
+      }

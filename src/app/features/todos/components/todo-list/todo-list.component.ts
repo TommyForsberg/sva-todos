@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import { Todo } from '../../models/todo';
 
 @Component({
@@ -7,11 +7,15 @@ import { Todo } from '../../models/todo';
   styleUrls: ['./todo-list.component.css']
 })
 
-export class TodoListComponent implements OnInit {
+export class TodoListComponent implements OnChanges {
   @Input() todos: Todo[] | null= []; 
+  page = 1;
+  pageSize = 10;
+  collectionSize: number = 0;
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
+    this.collectionSize = this.todos? this.todos.length : 0;
   }
 
 }
